@@ -26,15 +26,15 @@ security:
 spring:
     datasource:
         data: classpath:/sql/data.sql
-        driver-class-name: org.h2.Driver
+        driver-class-name: com.mysql.jdbc.Driver
+        password: '1234'
         platform: mysql
         schema: classpath:/sql/schema.sql
-        url: jdbc:h2:mem:delivery
-        username: sa
-        password: 
+        url: jdbc:mysql://localhost/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false
+        username: root
     jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
+        database-platform: org.hibernate.dialect.MySQLDialect
         generate-ddl: false
         hibernate:
-            ddl-auto: create-drop
+            ddl-auto: none
         show-sql: true
